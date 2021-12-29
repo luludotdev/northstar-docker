@@ -15,7 +15,7 @@ winetricks dxvk || true
 # Download latest Northstar release if not found
 if [ ! -f "NorthstarLauncher.exe" ]; then
   wget -O northstar.zip `curl -s https://api.github.com/repos/R2Northstar/Northstar/releases/latest | jq -r '.assets[0].browser_download_url'`
-  unzip northstar.zip
+  unzip northstar.zip && rm northstar.zip
 fi
 
 # Run Northstar
